@@ -1,0 +1,57 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "88660c5c56ea91e4de2dcf33487920a1",
+    "entities": [
+      {
+        "tableName": "LocalBD",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_local` INTEGER NOT NULL, `codigo` TEXT, `nombre` TEXT, `imagen` TEXT, `mesa` INTEGER NOT NULL, PRIMARY KEY(`id_local`))",
+        "fields": [
+          {
+            "fieldPath": "id_local",
+            "columnName": "id_local",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "codigo",
+            "columnName": "codigo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nombre",
+            "columnName": "nombre",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "imagen",
+            "columnName": "imagen",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mesa",
+            "columnName": "mesa",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id_local"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"88660c5c56ea91e4de2dcf33487920a1\")"
+    ]
+  }
+}
